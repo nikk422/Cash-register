@@ -28,14 +28,12 @@ function calculateChange(amountToBeReturned) {
     var numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
 
     amountToBeReturned = amountToBeReturned % availableNotes[i];
-    if (numberOfNotes>0){
+    if (numberOfNotes >=0){
+      amountToBeReturned = amountToBeReturned % availableNotes[i];
       noOfNotes[i].innerText = numberOfNotes;
     }else{
-            showMessage("Do you wanna wash plates?");
-
-
-    }
-    
+      showMessage("Do you wanna wash plates?");
+    }    
   }
 }
 
